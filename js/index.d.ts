@@ -9,7 +9,7 @@ export declare enum PermissionKind {
 
 export declare enum PermissionAccess {
   Read = 0,
-  Wrtie = 1,
+  Write = 1,
 }
 
 export declare type Permission = {
@@ -34,6 +34,24 @@ export declare function isAuthorized(permissions: Permission[]): Promise<boolean
  */
 export declare function requestPermissions(permissions: Permission[]): Promise<boolean>
 
+
+
+/**
+ * Disconnect from Google Fit. 
+ * 
+ * @return Promise<boolean>
+ */
+ export declare function disconnect(): Promise<boolean>
+
+ /**
+  * Log out from Google account. 
+  * 
+  * @return Promise<boolean>
+  */
+ export declare function logout(): Promise<boolean>
+
+ 
+
 /**
  * Data interval.
  * 
@@ -41,7 +59,7 @@ export declare function requestPermissions(permissions: Permission[]): Promise<b
  */
 export declare type Interval = 'days' | 'hour' | 'minute'
 
-export declare interface StepsRequest {
+export declare interface Request {
   startDate: string
   endDate?: string
   interval?: Interval
