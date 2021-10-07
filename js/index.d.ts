@@ -1,3 +1,6 @@
+export const Platform = 'GoogleFit';
+
+
 export declare enum PermissionKind {
   Steps = 0,
   Distances = 1,
@@ -71,7 +74,7 @@ export declare interface StepRecord {
   quantity: number
 }
 
-export declare type StepsResponse = StepRecord[]
+//export declare type StepsResponse = StepRecord[]
 
 /**
  * Fetch steps on a given period of time. 
@@ -83,7 +86,7 @@ export declare type StepsResponse = StepRecord[]
  * @param request StepsRequest
  * @return Promise<StepsResponse>
  */
-export declare function getSteps(request: StepsRequest): Promise<StepsResponse>
+export declare function getSteps(request: Request): Promise<StepRecord[]>
 
 export declare interface DistanceRequest {
   startDate: string
@@ -97,7 +100,6 @@ export declare interface DistanceRecord {
   quantity: number
 }
 
-export declare type DistanceResponse = DistanceRecord[]
 
 /**
  * Fetch distance in meters on a given period of time.
@@ -109,7 +111,7 @@ export declare type DistanceResponse = DistanceRecord[]
  * @param request DistanceRequest
  * @return Promise<DistanceResponse>
  */
-export declare function getDistance(request: DistanceRequest): Promise<DistanceResponse>
+export declare function getDistance(request: DistanceRequest): Promise<DistanceRecord[]>
 
 export declare interface CaloriesRequest {
   startDate: string
@@ -123,7 +125,6 @@ export declare interface CalorieRecord {
   quantity: number
 }
 
-export declare type CaloriesResponse = CalorieRecord[]
 
 /**
  * Fetch calories burnt in kilocalories on a given period of time.
@@ -135,7 +136,7 @@ export declare type CaloriesResponse = CalorieRecord[]
  * @param request CaloriesRequest
  * @return Promise<CaloriesResponse>
  */
-export declare function getCalories(request: CaloriesRequest): Promise<CaloriesResponse>
+export declare function getCalories(request: CaloriesRequest): Promise<CalorieRecord[]>
 
 export declare interface HeartRateRequest {
   startDate: string
@@ -149,7 +150,6 @@ export declare interface HeartRateRecord {
   quantity: number
 }
 
-export declare type HeartRateResponse = HeartRateRecord[]
 
 /**
  * Fetch heart rate bpm on a given period of time.
@@ -161,7 +161,7 @@ export declare type HeartRateResponse = HeartRateRecord[]
  * @param request HeartRateRequest
  * @return Promise<HeartRateResponse>
  */
-export declare function getHeartRate(request: HeartRateRequest): Promise<HeartRateResponse>
+export declare function getHeartRate(request: HeartRateRequest): Promise<HeartRateRecord[]>
 
 export declare interface SleepAnalysisRequest {
   startDate: string
@@ -176,8 +176,6 @@ export declare interface SleepAnalysisRecord {
   sourceId: string
 }
 
-export declare type SleepAnalysisResponse = SleepAnalysisRecord[]
-
 /**
  * Fetch sleep analysis data on a given period of time. 
  *
@@ -187,7 +185,7 @@ export declare type SleepAnalysisResponse = SleepAnalysisRecord[]
  * @param request SleepAnalysisRequest
  * @return Promise<SleepAnalysisResponse>
  */
-export declare function getSleepAnalysis(request: SleepAnalysisRequest): Promise<SleepAnalysisResponse>
+export declare function getSleepAnalysis(request: SleepAnalysisRequest): Promise<SleepAnalysisRecord[]>
   
 /**
  * Available only on Android. 
